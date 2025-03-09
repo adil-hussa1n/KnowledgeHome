@@ -142,20 +142,19 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`
-                inline-flex items-center justify-center p-2 rounded-lg
-                transition-all duration-300
+                inline-flex items-center justify-center p-2 rounded-xl
+                transition-all duration-200
                 ${isOpen 
-                  ? 'bg-blue-800/40 text-white rotate-180' 
-                  : 'text-gray-300 hover:text-white hover:bg-blue-800/30'}
+                  ? 'bg-blue-800/60 text-white' 
+                  : 'text-gray-300 hover:text-white hover:bg-blue-800/40'}
                 ${!scrolled && isHomePage ? 'hover:bg-white/10' : ''}
               `}
               aria-label="Toggle menu"
             >
-              {isOpen ? (
-                <FaTimes className="block h-6 w-6" />
-              ) : (
-                <FaBars className="block h-6 w-6" />
-              )}
+              <div className="relative w-6 h-6">
+                <FaBars className={`absolute inset-0 transform transition-all duration-200 ${isOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'}`} />
+                <FaTimes className={`absolute inset-0 transform transition-all duration-200 ${isOpen ? 'rotate-0 opacity-100' : '-rotate-90 opacity-0'}`} />
+              </div>
             </button>
           </div>
         </div>
@@ -164,36 +163,49 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div 
         className={`
-          md:hidden transition-all duration-300 transform
-          ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
+          md:hidden fixed left-0 right-0 transition-all duration-300 ease-in-out
+          ${isOpen 
+            ? 'translate-y-0 opacity-100 visible' 
+            : '-translate-y-2 opacity-0 invisible'}
         `}
+        style={{
+          top: '64px', // Height of the navbar
+          maxHeight: 'calc(100vh - 64px)',
+          overflowY: 'auto'
+        }}
       >
         <div className={`
-          px-2 pt-2 pb-3 space-y-1 sm:px-3 backdrop-blur-md border-b
+          px-2 pt-2 pb-3 space-y-2 sm:px-3 backdrop-blur-md border-b
+          shadow-xl
           ${scrolled
-            ? "bg-gradient-to-b from-blue-900/95 to-blue-950/95 border-blue-800/50"
-            : "bg-gradient-to-b from-blue-900/90 to-blue-950/90 border-blue-800/30"}
+            ? "bg-gradient-to-b from-blue-900/98 to-blue-950/98 border-blue-800/50"
+            : "bg-gradient-to-b from-blue-900/95 to-blue-950/95 border-blue-800/30"}
         `}>
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={`
-                block w-full text-left px-4 py-3 rounded-lg text-base font-medium
-                transition-all duration-300 relative overflow-hidden
+                block w-full text-left px-5 py-3.5 rounded-xl text-base font-medium
+                transition-all duration-200 relative overflow-hidden
                 ${activeSection === item.id 
-                  ? 'text-white' + (item.isSpecial ? ' bg-blue-600 shadow-lg shadow-blue-500/20' : ' bg-blue-800/40')
+                  ? 'text-white shadow-lg ' + 
+                    (item.isSpecial 
+                      ? 'bg-blue-600 shadow-blue-500/20' 
+                      : 'bg-blue-800/60 shadow-blue-900/20')
                   : 'text-gray-300 hover:text-white ' + 
                     (item.isSpecial 
-                      ? 'hover:bg-blue-600 bg-blue-600/20' 
-                      : 'hover:bg-blue-800/30')}
+                      ? 'hover:bg-blue-600/90 bg-blue-600/20' 
+                      : 'hover:bg-blue-800/40 active:bg-blue-800/60')}
                 ${!scrolled && isHomePage ? 'hover:bg-white/10' : ''}
               `}
             >
-              {item.label}
-              {activeSection === item.id && !item.isSpecial && (
-                <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-8 bg-blue-400 rounded-r-full"></span>
-              )}
+              <div className="flex items-center">
+                {item.label}
+                {activeSection === item.id && !item.isSpecial && (
+                  <span className="ml-2 w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                )}
+              </div>
             </button>
           ))}
         </div>
