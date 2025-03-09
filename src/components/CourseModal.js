@@ -27,7 +27,7 @@ const courseData = {
     level: "All Levels",
     batchSize: "10-12 students",
     price: "15,000 BDT",
-    instructor: "John Smith"
+    instructor: "MD Saidul Alam"
   },
   "basic-english": {
     title: "Basic English",
@@ -52,7 +52,7 @@ const courseData = {
     level: "Beginner",
     batchSize: "12-15 students",
     price: "8,000 BDT",
-    instructor: "Sarah Johnson"
+    instructor: "Fatima Begum"
   },
   "ict": {
     title: "ICT (Information and Communication Technology)",
@@ -77,7 +77,7 @@ const courseData = {
     level: "Beginner",
     batchSize: "15 students",
     price: "10,000 BDT",
-    instructor: "Michael Rahman"
+    instructor: "Juber Ahmed"
   },
   "graphics-design": {
     title: "Graphic Design",
@@ -102,7 +102,7 @@ const courseData = {
     level: "Beginner to Intermediate",
     batchSize: "12 students",
     price: "15,000 BDT",
-    instructor: "Sarah Ahmed"
+    instructor: "Tanvir Hussain"
   },
   "web-development": {
     title: "Web Development",
@@ -127,7 +127,7 @@ const courseData = {
     level: "Beginner to Advanced",
     batchSize: "10 students",
     price: "20,000 BDT",
-    instructor: "David Wilson"
+    instructor: "Adil Hussain"
   }
 };
 
@@ -140,13 +140,23 @@ const CourseModal = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleBackToCourses = () => {
+    navigate('/#courses');
+    setTimeout(() => {
+      const coursesSection = document.getElementById('courses');
+      if (coursesSection) {
+        coursesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   if (!course) {
     return (
       <div className="min-h-screen flex items-center justify-center pt-16" style={{ backgroundColor: colors.background.main }}>
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4" style={{ color: colors.text.primary }}>Course not found</h2>
           <button
-            onClick={() => navigate('/')}
+            onClick={handleBackToCourses}
             className="px-6 py-3 rounded-lg flex items-center mx-auto"
             style={{ 
               backgroundColor: colors.primary.main,
@@ -286,9 +296,9 @@ const CourseModal = () => {
         </div>
 
         {/* Back Button */}
-        <div className="mt-12 text-center">
+        <div className="text-center mt-12">
           <button
-            onClick={() => navigate('/courses')}
+            onClick={handleBackToCourses}
             className="px-6 py-3 rounded-lg flex items-center mx-auto transition-all duration-300 hover:scale-105"
             style={{ 
               backgroundColor: colors.primary.main,

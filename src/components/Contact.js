@@ -71,8 +71,8 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-2" style={{ color: colors.text.primary }}>Our Location</h3>
                     <p style={{ color: colors.text.secondary }}>
-                      House #123, Road #12, Block #E<br />
-                      Banani, Dhaka-1213
+                    Hazzi Ellias Ali Market, 4th Floor<br />
+                    College Road, Beanibazar, Sylhet
                     </p>
                   </div>
                 </div>
@@ -85,7 +85,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2" style={{ color: colors.text.primary }}>Call Us</h3>
-                    <p style={{ color: colors.text.secondary }}>+880 1234-567890</p>
+                    <p style={{ color: colors.text.secondary }}>+880 1703-295853</p>
                   </div>
                 </div>
 
@@ -97,7 +97,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2" style={{ color: colors.text.primary }}>Email Us</h3>
-                    <p style={{ color: colors.text.secondary }}>info@Knowledgehome.edu.bd</p>
+                    <p style={{ color: colors.text.secondary }}>knowledge.home.syl@gmail.com</p>
                   </div>
                 </div>
 
@@ -110,7 +110,7 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-2" style={{ color: colors.text.primary }}>Working Hours</h3>
                     <p style={{ color: colors.text.secondary }}>
-                      Sat - Thu: 9:00 AM - 8:00 PM<br />
+                      Sat - Thu: 9:00 AM - 5:00 PM<br />
                       Friday: Closed
                     </p>
                   </div>

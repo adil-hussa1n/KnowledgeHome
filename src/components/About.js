@@ -1,9 +1,13 @@
 import React from "react";
 import { FaGraduationCap, FaUsers, FaLaptopCode, FaChalkboardTeacher, FaAward, FaHandshake } from "react-icons/fa";
 import { colors } from "../constants/colors";
-import instructor1 from "../images/1.jpg";
-import instructor2 from "../images/2.jpg";
-import instructor3 from "../images/3.jpg";
+import instructor1 from "../images/adil.jpg";
+import instructor2 from "../images/tanvir.JPG";
+import instructor3 from "../images/fatima.jpeg";
+import instructor4 from "../images/juber.png";
+import instructor6 from "../images/saidul.jpeg";
+import instructor7 from "../images/adilh.png";
+
 
 const About = () => {
   const features = [
@@ -41,35 +45,34 @@ const About = () => {
 
   const instructors = [
     {
-      name: "Azad Choudhury",
-      role: "Founder & Head Instructor",
-      image: instructor1,
-      description: "A visionary educator and entrepreneur dedicated to making education accessible and skill-based.",
-      featured: true
+      name: "Juber Ahmed",
+      role: "CEO & Head of the institute",
+      image: instructor4,
+      description: "A visionary leader and educator with extensive experience in educational management and strategic planning.",
     },
     {
-      name: "John Smith",
-      role: "IELTS & English Instructor",
+      name: "Adil Hussain",
+      role: "Web Development Instructor",
+      image: instructor7,
+      description: "Expert full-stack developer with years of experience in teaching MERN stack and modern web technologies."
+    },
+    {
+      name: "MD Saidul Islam",
+      role: "IELTS Instructor",
+      image: instructor6,
+      description: "Experienced IELTS instructor specializing in all modules with proven success in helping students achieve their target bands."
+    },
+    {
+      name: "Tanvir Hussain",
+      role: "Graphic Design Instructor",
       image: instructor2,
-      description: "Expert IELTS trainer with over 8 years of experience in language teaching."
+      description: "Professional graphic designer skilled in Adobe Creative Suite, UI/UX design, and brand identity development."
     },
     {
-      name: "Michael Rahman",
-      role: "ICT Specialist",
+      name: "Fatima Begum",
+      role: "IELTS Instructor",
       image: instructor3,
-      description: "Experienced IT professional specializing in computer fundamentals and digital literacy."
-    },
-    {
-      name: "Sarah Ahmed",
-      role: "Graphic Design Mentor",
-      image: instructor2,
-      description: "Creative design expert with expertise in modern design tools and techniques."
-    },
-    {
-      name: "David Wilson",
-      role: "Web Development Trainer",
-      image: instructor3,
-      description: "Full-stack developer passionate about teaching modern web technologies."
+      description: "Certified IELTS trainer with proven track record of helping students achieve band 7+ scores across all modules."
     }
   ];
 
@@ -147,113 +150,87 @@ const About = () => {
               Our team consists of experienced educators and industry professionals committed to providing high-quality training.
             </p>
 
-            {/* Featured Instructor */}
+            {/* Featured Advisor */}
             <div className="mb-12">
-              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500"
+              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 max-w-4xl mx-auto"
                    style={{ 
                      backgroundColor: colors.background.secondary,
                      border: `1px solid rgba(255, 255, 255, 0.1)`
                    }}>
-                <div className="grid md:grid-cols-2 gap-8 p-8">
+                <div className="grid md:grid-cols-2 gap-6 p-6">
                   {/* Image Container */}
-                  <div className="relative h-96 md:h-full overflow-hidden rounded-xl">
+                  <div className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-xl">
                     <img
                       src={instructor1}
-                      alt="Azad Choudhury"
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      alt="Shahab Uddin"
+                      className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
                     />
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-900/50 to-transparent opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-950/50 to-transparent opacity-70" />
                   </div>
 
                   {/* Content */}
-                  <div className="flex flex-col justify-center">
-                    <div className="mb-4 inline-flex">
-                      <span className="px-4 py-2 rounded-full text-sm" 
+                  <div className="flex flex-col justify-center space-y-4">
+                    <div className="inline-flex">
+                      <span className="px-4 py-2 rounded-full text-sm font-medium" 
                             style={{ backgroundColor: colors.primary.main, color: colors.text.primary }}>
-                        Founder & Head Instructor
+                        Advisor
                       </span>
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent">
-                      Azad Choudhury
+                    <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent">
+                      Shahab Uddin
                     </h3>
-                    <p className="text-xl leading-relaxed mb-6" style={{ color: colors.text.secondary }}>
-                      A visionary educator and entrepreneur dedicated to making education accessible and skill-based.
+                    <p className="text-lg leading-relaxed" style={{ color: colors.text.secondary }}>
+                      A distinguished educational advisor with over 15 years of experience in academic excellence. Committed to guiding institutions towards innovative teaching methodologies and student success.
                     </p>
-                    <div className="flex gap-4">
-                      <button className="px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105"
-                              style={{ backgroundColor: colors.primary.main, color: colors.text.primary }}>
-                        View Profile
-                      </button>
-                      <button className="px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105"
-                              style={{ border: `2px solid ${colors.primary.light}`, color: colors.primary.light }}>
-                        Contact
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Other Instructors Grid */}
+            {/* Instructors Section */}
             <h3 className="text-2xl font-bold text-center mb-8" style={{ color: colors.text.primary }}>
               Our Expert <span style={{ color: colors.primary.light }}>Instructors</span>
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-              {instructors.filter(instructor => !instructor.featured).map((instructor, index) => (
+
+            {/* Instructors Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+              {instructors.map((instructor, index) => (
                 <div
                   key={index}
-                  className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                  className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col"
                   style={{ 
                     backgroundColor: colors.background.secondary,
                     border: `1px solid rgba(255, 255, 255, 0.1)`
                   }}
                 >
-                  {/* Image Container */}
-                  <div className="relative h-48 overflow-hidden">
+                  {/* Image Container with Aspect Ratio */}
+                  <div className="relative aspect-[4/4] overflow-hidden rounded-t-xl">
                     <img
                       src={instructor.image}
                       alt={instructor.name}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 to-transparent opacity-60" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Subtle Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-950/30 via-transparent to-transparent" />
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2" style={{ color: colors.text.primary }}>
+                  <div className="p-5 flex-1 flex flex-col">
+                    <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent">
                       {instructor.name}
                     </h3>
-                    <p className="text-sm mb-3" style={{ color: colors.primary.light }}>
+                    <div className="mb-3 inline-flex px-3 py-1 rounded-full text-sm self-start"
+                         style={{ backgroundColor: colors.primary.main + '20', color: colors.primary.light }}>
                       {instructor.role}
-                    </p>
-                    <p className="text-sm leading-relaxed" style={{ color: colors.text.secondary }}>
+                    </div>
+                    <p className="text-sm leading-relaxed"
+                       style={{ color: colors.text.secondary }}>
                       {instructor.description}
                     </p>
                   </div>
-
-                  {/* Hover Effect Border */}
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/30 rounded-xl transition-colors duration-300" />
                 </div>
               ))}
-            </div>
-
-            {/* View Full Team Button */}
-            <div className="text-center">
-              <button
-                className="px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg inline-flex items-center gap-2"
-                style={{ 
-                  backgroundColor: colors.primary.main,
-                  color: colors.text.primary
-                }}
-              >
-                View Full Team
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
             </div>
           </div>
         </div>

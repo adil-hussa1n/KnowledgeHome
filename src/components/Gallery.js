@@ -3,28 +3,37 @@ import { FaArrowLeft, FaArrowRight, FaExpand, FaTimes } from 'react-icons/fa';
 import { colors } from '../constants/colors';
 
 // Import images
-import image1 from '../images/1.jpg';
-import image2 from '../images/2.jpg';
-import image3 from '../images/3.jpg';
+import image1 from '../images/ac1.png';
+import image2 from '../images/ac2.png';
+import image3 from '../images/ac3.png'; 
+import image10 from '../images/ac4.png';
+
+import image4 from '../images/class.png';
+import image5 from '../images/ieltsclass.png';
+import image6 from '../images/designclass.png';
+
+import image7 from '../images/ws1.png';
+import image8 from '../images/ws2.png';
+import image9 from '../images/ws3.png';
 
 // Gallery data with imported images
 const galleryImages = [
   // Workshops
   {
     id: 1,
-    url: image1,
+    url: image7,
     title: 'IELTS Workshop Session',
     category: 'Workshops'
   },
   {
     id: 2,
-    url: image2,
+    url: image8,
     title: 'Graphics Design Workshop',
     category: 'Workshops'
   },
   {
     id: 3,
-    url: image3,
+    url: image9,
     title: 'Web Development Workshop',
     category: 'Workshops'
   },
@@ -32,19 +41,19 @@ const galleryImages = [
   // Classes
   {
     id: 4,
-    url: image1,
+    url: image5,
     title: 'English Speaking Class',
     category: 'Classes'
   },
   {
     id: 5,
-    url: image2,
+    url: image4,
     title: 'ICT Training Session',
     category: 'Classes'
   },
   {
     id: 6,
-    url: image3,
+    url: image6,
     title: 'Web Development Class',
     category: 'Classes'
   },
@@ -52,19 +61,19 @@ const galleryImages = [
   // Achievements
   {
     id: 7,
-    url: image1,
+    url: image10,
     title: 'IELTS Success Stories',
     category: 'Achievements'
   },
   {
     id: 8,
-    url: image2,
+    url: image3,
     title: 'Student Certifications',
     category: 'Achievements'
   },
   {
     id: 9,
-    url: image3,
+    url: image2,
     title: 'Competition Winners',
     category: 'Achievements'
   }
@@ -126,7 +135,7 @@ const Gallery = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredImages.map((image) => (
             <div
               key={image.id}
@@ -134,12 +143,12 @@ const Gallery = () => {
               className="group relative overflow-hidden rounded-xl cursor-pointer transform transition-all duration-500 hover:-translate-y-2"
               style={{ backgroundColor: colors.background.secondary }}
             >
-              {/* Image */}
-              <div className="aspect-w-16 aspect-h-9 relative">
+              {/* Image Container with Fixed Aspect Ratio */}
+              <div className="relative pb-[66.67%]">
                 <img
                   src={image.url}
                   alt={image.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">

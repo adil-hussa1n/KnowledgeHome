@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import logo from "../images/logo.jpeg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -95,11 +96,19 @@ const Navbar = () => {
           <div className="flex-shrink-0 group">
             <Link 
               to="/" 
-              className="text-2xl font-bold text-white flex items-center space-x-2.5 transition-all duration-300 transform group-hover:scale-105"
+              className="flex items-center space-x-3 transition-all duration-300 transform group-hover:scale-105"
             >
-          
+              {/* Logo Image */}
+              <div className="w-10 h-10 rounded-full overflow-hidden bg-white ring-2 ring-blue-500/50">
+                <img
+                  src={logo}
+                  alt="Knowledge Home Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              {/* Brand Name */}
               <span className={`
-                bg-clip-text text-transparent transition-all duration-300
+                text-2xl font-bold bg-clip-text text-transparent transition-all duration-300
                 ${scrolled
                   ? "bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100"
                   : "bg-gradient-to-r from-white to-blue-100"}

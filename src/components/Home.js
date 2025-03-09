@@ -1,6 +1,7 @@
 import React from "react";
 import { colors } from "../constants/colors";
 import { FaGraduationCap, FaLaptopCode, FaChalkboardTeacher, FaUserGraduate } from "react-icons/fa";
+import logo from "../images/logo.jpeg";
 
 const Home = () => {
   return (
@@ -19,6 +20,22 @@ const Home = () => {
 
         <div className="container mx-auto px-6 py-20 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
+            {/* Logo */}
+            <div className="mb-8 flex justify-center">
+              <div className="w-32 h-32 md:w-40 md:h-40 relative animate-float">
+                <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-xl transform scale-110 animate-pulse"></div>
+                <div className="relative w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-blue-700 p-0.5">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                    <img
+                      src={logo}
+                      alt="Knowledge Home Logo"
+                      className="w-full h-full object-contain transform hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 bg-clip-text text-transparent animate-fade-in">
               Knowledge Home
             </h1>
@@ -56,9 +73,15 @@ const Home = () => {
         </div>
       </div>
 
-
-
       <style jsx>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
         @keyframes fade-in {
           from {
             opacity: 0;
@@ -68,6 +91,9 @@ const Home = () => {
             opacity: 1;
             transform: translateY(0);
           }
+        }
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
         }
         .animate-fade-in {
           animation: fade-in 1s ease-out forwards;

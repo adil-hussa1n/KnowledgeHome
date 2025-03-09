@@ -21,7 +21,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {[
-                { icon: FaFacebook, link: "https://facebook.com" },
+                { icon: FaFacebook, link: "https://www.facebook.com/profile.php?id=61563818897893&mibextid=wwXIfr&rdid=DU6Bx7Gt3duuruJz#" },
                 { icon: FaTwitter, link: "https://twitter.com" },
                 { icon: FaInstagram, link: "https://instagram.com" },
                 { icon: FaLinkedin, link: "https://linkedin.com" }
@@ -70,9 +70,9 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-6" style={{ color: colors.text.primary }}>Contact Info</h3>
             <ul className="space-y-4">
               {[
-                { icon: FaMapMarkerAlt, text: "House #123, Road #12, Block #E, Banani, Dhaka-1213" },
-                { icon: FaPhone, text: "+880 1234-567890" },
-                { icon: FaEnvelope, text: "info@knowledgehome.edu.bd" }
+                { icon: FaMapMarkerAlt, text: "Hazzi Ellias Ali Market, 4th Floor, College Road, Beanibazar, Sylhet" },
+                { icon: FaPhone, text: "+880 1703-295853" },
+                { icon: FaEnvelope, text: "knowledge.home.syl@gmail.com" }
               ].map((contact, index) => (
                 <li key={index} className="flex items-start gap-3 group">
                   <contact.icon 
