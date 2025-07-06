@@ -7,6 +7,7 @@ import instructor3 from "../images/fatima.jpeg";
 import instructor4 from "../images/juber.png";
 import instructor6 from "../images/saidul.jpeg";
 import instructor7 from "../images/adilh.png";
+import instructor5 from "../images/abul.jpg";
 
 
 const About = () => {
@@ -45,10 +46,16 @@ const About = () => {
 
   const instructors = [
     {
-      name: "Juber Ahmed",
-      role: "CEO & Head of the institute",
+      name: "Jubaer Ahmed",
+      role: "CEO",
       image: instructor4,
-      description: "A visionary leader and educator with extensive experience in educational management and strategic planning.",
+      description: "A visionary leader with extensive experience in educational management and strategic planning.",
+    },
+    {
+      name: "MD Abul Hussain",
+      role: "Director",
+      image: instructor5, // Temporarily using an existing image
+      description: "An experienced director with a strong background in educational leadership and organizational development.",
     },
     {
       name: "Adil Hussain",
